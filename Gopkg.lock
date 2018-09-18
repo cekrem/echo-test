@@ -67,17 +67,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:dedf20eb0d3e8d6aa8a4d3d2fae248222b688ed528201995e152cc497899123c"
-  name = "golang.org/x/crypto"
-  packages = [
-    "acme",
-    "acme/autocert",
-  ]
-  pruneopts = "UT"
-  revision = "0e37d006457bf46f9e6692014ba72ef82c33022c"
-
-[[projects]]
-  branch = "master"
   digest = "1:6eb2645d74b43d9c87b51947df39f7c668a4f422cd512053f7f6f75bfaad0197"
   name = "golang.org/x/sys"
   packages = ["unix"]
@@ -90,7 +79,6 @@
   input-imports = [
     "github.com/labstack/echo",
     "github.com/labstack/echo/middleware",
-    "golang.org/x/crypto/acme/autocert",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"golang.org/x/crypto/acme/autocert"
 	"net/http"
 	"os"
 
@@ -23,10 +22,6 @@ func main() {
 	// Echo instance
 	e := echo.New()
 
-	// TLS
-	e.AutoTLSManager.HostPolicy = autocert.HostWhitelist("cekrem.herokuapp.com")
-	e.AutoTLSManager.Cache = autocert.DirCache(".cache")
-
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
@@ -35,7 +30,7 @@ func main() {
 	e.GET("/", hello)
 
 	// Start server
-	e.Logger.Fatal(e.StartAutoTLS(getAddress()))
+	e.Logger.Fatal(e.StartTLS(getAddress(), "cert.pem", "key.pem"))
 }
 
 // Handler
