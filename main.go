@@ -24,6 +24,7 @@ func main() {
 	e := echo.New()
 
 	// TLS
+	e.AutoTLSManager.HostPolicy = autocert.HostWhitelist("cekrem.herokuapp.com")
 	e.AutoTLSManager.Cache = autocert.DirCache(".cache")
 
 	// Middleware
