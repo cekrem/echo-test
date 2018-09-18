@@ -24,6 +24,7 @@
 #   go-tests = true
 #   unused-packages = true
 
+metadata.heroku['root-package'] = github.com/cekrem/echo-test
 
 [[constraint]]
   name = "github.com/labstack/echo"
